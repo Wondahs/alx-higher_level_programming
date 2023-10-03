@@ -6,6 +6,8 @@ if number < 0:
     figure = number * (-1)
 divisor = 10
 remainder = figure % divisor
+if number < 0:
+    remainder = remainder * (-1)
 if remainder > 5:
     print(f"Last digit of {number} is {remainder} and is greater than 5")
 elif remainder == 0:
