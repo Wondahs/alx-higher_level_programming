@@ -4,7 +4,7 @@ argv = argv[1:]
 length = len(argv)
 if __name__ == "__main__":
     if length < 2:
-        print("{} argument{}".format(length, "." if length == 1 else "s."))
+        print("{} argument{}".format(length, ":" if length == 1 else "s."))
     else:
         print("{} arguments:".format(length))
     if length > 0:
