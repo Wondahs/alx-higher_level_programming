@@ -9,4 +9,4 @@ if __name__ == "__main__":
         print("{} arguments:".format(length))
     if length > 0:
         for index, value in enumerate(argv, start=1):
-            print("{} : {}".format(index, value))
+            print("{}: {}".format(index, value))
