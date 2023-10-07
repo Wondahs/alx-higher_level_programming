@@ -71,14 +71,12 @@ int is_palindrome(listint_t **head)
 	start = *head;
 	right = *head;
 	size = check_size(&start);
-	for (i = 0; i < size / 2; i++)
+	for (i = 1; i < size / 2; i++)
 	{
 		start = start->next;
 	}
-	if (size % 2 == 0)
-		left = start;
-	else
-		left = start->next;
+	if (size % 2 == 0 && start->n != start->next->n)
+		return (0);
 	left = reverse_list(&right);
 	mid = right;
 
