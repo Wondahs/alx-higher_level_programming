@@ -65,7 +65,7 @@ int is_palindrome(listint_t **head)
 	if (!*head)
 		return (0);
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
 	start = *head;
@@ -78,7 +78,7 @@ int is_palindrome(listint_t **head)
 	if (size % 2 == 0 && start->n != start->next->n)
 		return (0);
 	left = reverse_list(&right);
-	mid = right;
+	mid = left;
 
 	while (right)
 	{
