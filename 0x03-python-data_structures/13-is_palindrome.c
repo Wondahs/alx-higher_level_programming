@@ -2,26 +2,28 @@
 #include <unistd.h>
 
 /**
+ * link_lists - Links list @mid to @head
+ * @head: List 1
+ * @mid: List 2
  *
- *
- *
- *
+ * Return: Linked list.
  */
 listint_t *link_lists(listint_t **head, listint_t **mid)
 {
 	listint_t *start = *head;
 
-	while (start != NULL)
+	while (start->next != NULL)
 		start = start->next;
 	start->next = *mid;
 
 	return (*head);
 }
+
 /**
+ * reverse_list - Reverses a linked list
+ * @head: Pointer to a pointer to the head of a linked list
  *
- *
- *
- *
+ * Return: Reversed list
  */
 listint_t *reverse_list(listint_t **head)
 {
