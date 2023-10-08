@@ -79,13 +79,14 @@ int is_palindrome(listint_t **head)
 		return (0);
 	left = reverse_list(&right);
 	mid = left;
-
-	while (right)
+	i = 0;
+	while (i < size / 2)
 	{
 		if (right->n != left->n)
 			return (0);
 		right = right->next;
 		left = left->next;
+		i++;
 	}
 	reverse_list(&mid);
 
