@@ -65,7 +65,7 @@ int is_palindrome(listint_t **head)
 	if (!*head)
 		return (0);
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*head == NULL)
 		return (1);
 
 	start = *head;
