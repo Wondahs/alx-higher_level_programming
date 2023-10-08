@@ -62,9 +62,6 @@ int is_palindrome(listint_t **head)
 	listint_t *start, *left, *right, *mid;
 	int size, i;
 
-	if (!*head)
-		return (0);
-
 	if ((*head) == NULL || (*head)->next == NULL)
 		return (1);
 
