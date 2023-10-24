@@ -29,11 +29,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """ Sets new value to size
-
-        Args:
-            value: New value
-        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
