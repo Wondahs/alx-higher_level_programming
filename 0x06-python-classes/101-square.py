@@ -31,12 +31,11 @@ class Square:
         Args:
             value: New value
         """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
 
     @property
     def position(self):
@@ -64,7 +63,7 @@ class Square:
         Return:
             Area of square size
         """
-        return (self.__size * self.__size)
+        return self.__size ** 2
 
     def my_print(self):
         """ Prints square
@@ -83,11 +82,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
+            for i in range(0, self.__position[1]):
+                print("")
+            for i in range(0, self.__size):
                 print(" " * self.__position[0], end='')
                 print("#" * self.__size, end='')
                 if i != self.__size - 1:
-                    print()
-        return ("")
+                    print("")
+        return ""
