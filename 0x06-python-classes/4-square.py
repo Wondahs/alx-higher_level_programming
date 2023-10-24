@@ -1,11 +1,19 @@
 #!/usr/bin/python3
+"""Defines a square"""
+
+
 class Square:
     """ An empty class that defines a Square
 
     Attributes:
-    __size (int): Size of square. Size must be at least 0
+        __size (int): Size of square. Size must be at least 0
     """
     def __init__(self, size=0):
+        """init method
+
+        Args:
+            size (int): Size of Square
+        """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -21,11 +29,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """ Sets new value to size
-
-        Args:
-            value: New value
-        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
