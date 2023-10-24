@@ -17,8 +17,8 @@ class Node:
             data (int): Data in node
             next_node (Node): Next node
         """
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -66,15 +66,15 @@ class SinglyLinkedList:
         else:
             current = self.__head
             while current.next_node and current.next_node.data < value:
-                    current = current.next_node
+                current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
         """Makes the list printable."""
-        result = ""
+        result = []
         current = self.__head
         while current:
-            result += str(current.data) + "\n"
+            result.append(str(current.data))
             current = current.next_node
-        return result
+        return ('\n'.join(result))
