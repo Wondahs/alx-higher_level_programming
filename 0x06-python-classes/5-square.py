@@ -10,7 +10,8 @@ class Square:
     """
 
     def __init__(self, size=0):
-        """init module.
+        """Instantiates new square.
+
         Args:
             size (int): Size of square.
         """
