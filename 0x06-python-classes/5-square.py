@@ -3,7 +3,11 @@
 
 
 class Square:
-    """An empty class that defines a Square"""
+    """An empty class that defines a Square.
+
+    Attributes:
+        __size (int): Size of square
+    """
 
     def __init__(self, size=0):
         """init module.
