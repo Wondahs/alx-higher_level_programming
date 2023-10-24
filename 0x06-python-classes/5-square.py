@@ -7,7 +7,6 @@ class Square:
 
     def __init__(self, size=0):
         """init module.
-
         Args:
             size (int): Size of square.
         """
@@ -28,16 +27,11 @@ class Square:
             self.__size = value
 
     def area(self):
-        """ Calculates the area of square
-
-        Return:
-            Area of square size
-        """
+        """Calculates the area of square."""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """ Prints square
-        """
+        """Prints square with "#" character"""
         if self.__size == 0:
             print()
             return
