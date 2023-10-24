@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-class Square:
-    """ An empty class that defines a Square
+"""Define square size"""
 
-    Attributes:
-    __size (int): Size of square
-    """
+
+class Square:
+    """An empty class that defines a Square."""
+
     def __init__(self, size):
+        """Instantiation method
+
+        Args:
+            size (int): Size of square
+        """
         self.__size = size
