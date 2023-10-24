@@ -9,6 +9,11 @@ class Square:
     __size (int): Size of square. Size must be at least 0
     """
     def __init__(self, size=0):
+        """init module.
+
+        Args:
+            size (int): Size of square.
+        """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -55,5 +60,5 @@ class Square:
         else:
             for i in range(self.__size):
                 for j in range(self.__size):
-                    print("#",end='')
+                    print("#", end='')
                 print()
