@@ -11,7 +11,7 @@ class Square:
         Args:
             size (int): Size of square.
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -30,9 +30,6 @@ class Square:
     def area(self):
         """ Calculates the area of square
 
-        Args:
-            self: Instance of square
-
         Return:
             Area of square size
         """
@@ -43,8 +40,8 @@ class Square:
         """
         if self.__size == 0:
             print()
+            return
         else:
-            for i in range(0, self.__size):
-                for j in range(0, self.__size):
-                    print("#", end='')
+            for i in range(self.__size):
+                [print("#", end="") for j in range(self.__size)]
                 print()
