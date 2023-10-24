@@ -3,10 +3,10 @@
 
 
 class Square:
-    """ An empty class that defines a Square
+    """An empty class that defines a Square
 
     Attributes:
-    __size (int): Size of square. Size must be at least 0
+        __size (int): Size of square. Size must be at least 0
     """
     def __init__(self, size=0):
         """init module.
@@ -14,17 +14,11 @@ class Square:
         Args:
             size (int): Size of square.
         """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.__size = size
 
     @property
     def size(self):
-        """ Returns the size of square
-        """
+        """Returns the size of square"""
         return self.__size
 
     @size.setter
@@ -53,7 +47,7 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__size):
-                for j in range(self.__size):
+            for i in range(0, self.__size):
+                for j in range(0, self.__size):
                     print("#", end='')
                 print()
