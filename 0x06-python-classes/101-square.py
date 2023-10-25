@@ -80,7 +80,7 @@ class Square:
     def __str__(self):
         """Makes square printable"""
         if self.__size == 0:
-            print()
+            return ""
         else:
             for i in range(0, self.__position[1]):
                 print("")
@@ -89,4 +89,4 @@ class Square:
                 print("#" * self.__size, end='')
                 if i != self.__size - 1:
                     print("")
-        return ""
+            return ""
