@@ -1,8 +1,9 @@
 # Test cases for add_integer function
 
 >>> import sys
->>> sys.path.append("..")
->>> import 0-add_integer
+>>> sys.path.append("../")
+>>> import add_integer
+>>> from add_integer import add_integer
 
 # Test with two positive integers
 >>> add_integer(2, 3)
