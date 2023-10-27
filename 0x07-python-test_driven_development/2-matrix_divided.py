@@ -15,9 +15,9 @@ def matrix_divided(matrix, div):
 	if div == 0:
 		raise ZeroDivisionError("division by zero")
 
-	result = matrix.deepcopy(matrix)
+	result = copy.deepcopy(matrix)
 
 	for row in result:
-		for element in row:
-			element = {:.2f}.format(element / div)
+		for i in range(len(row)):
+			row[i] = "{:.2f}".format(row[i] / div)
 	return result
