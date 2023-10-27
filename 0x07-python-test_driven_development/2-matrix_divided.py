@@ -24,5 +24,5 @@ def matrix_divided(matrix, div):
 
     for row in result:
         for i in range(len(row)):
-            row[i] = "{:.2f}".format(row[i] / div)
+            row[i] = float("{:.2f}".format(row[i] / div))
     return result

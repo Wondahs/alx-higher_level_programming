@@ -1,0 +1,60 @@
+# Test cases for 2-matrix_divided.py
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+#Initialize 3 matrices
+>>> matrix_1 = [[4,6,2], [8,1,7], [5,9,0]]
+>>> matrix_2 = [[4,"R",2], [8,1,7], [5,9,0]]
+>>> matrix_3 = [[4,6,2], [8,1,7], [5,9,0,5]]
+>>> matrix_4 = [2,4,6]
+
+#Define 3 variables
+>>> a = 4
+>>> b = 0
+>>> c = "d"
+
+# Test with non-zero digit and square matrix(all integers)
+>>> print(matrix_divided(matrix_1, a))
+[[1.0, 1.5, 0.5], [2.0, 0.25, 1.75], [1.25, 2.25, 0.0]]
+>>> print(matrix_1)
+[[4, 6, 2], [8, 1, 7], [5, 9, 0]]
+
+# Test with non-zero digit and square matrix(all integers)
+>>> print(matrix_divided(matrix_3, a))
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+>>> print(matrix_3)
+[[4, 6, 2], [8, 1, 7], [5, 9, 0, 5]]
+
+# Test with zero and square matrix(all integers)
+>>> print(matrix_divided(matrix_1, b))
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+>>> print(matrix_1)
+[[4, 6, 2], [8, 1, 7], [5, 9, 0]]
+
+# Test with non-integer and square matrix(all integers)
+>>> print(matrix_divided(matrix_1, c))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+>>> print(matrix_1)
+[[4, 6, 2], [8, 1, 7], [5, 9, 0]]
+
+# Test with integer and non matrix(all integers)
+>>> print(matrix_divided(matrix_4, b))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (listof lists) of integers/floats
+>>> print(matrix_4)
+[2, 4, 6]
+
+# Test with non-zero digit and square matrix(not all integers)
+>>> print(matrix_divided(matrix_2, a))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (listof lists) of integers/floats
+>>> print(matrix_2)
+[[4, 'R', 2], [8, 1, 7], [5, 9, 0]]
