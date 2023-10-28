@@ -1,0 +1,45 @@
+# Test for 4-print_square
+
+>>> print_square = __import__('4-print_square').print_square
+
+# Test with integers > 0
+>>> print_square(2)
+##
+##
+
+# Test with integers > 0
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Test with 0
+>>> print_square(0)
+
+# Test with integers < 0
+>>> print_square(-6)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+# Test with string
+>>> print_square("6")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+# Test with float > 0
+>>> print_square(6.4)
+######
+######
+######
+######
+######
+######

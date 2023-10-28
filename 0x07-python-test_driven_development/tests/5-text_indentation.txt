@@ -1,13 +1,63 @@
 # Test for 5-text_indentation
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-beatiorem! Iam ruinas videres""")
 
+# Test with "."
+>>> text_indentation("hello. world.")
+hello.
+world.
+
+# Test with "." and spaces at beginning
+>>> text_indentation("    hello. world.")
+hello.
+world.
+
+# Test with "." and spaces after "."
+>>> text_indentation("    hello.     world.")
+hello.
+world.
+
+# Test with "."
+>>> text_indentation("hello, world.")
+hello, world.
+
+# Test with "." and ":"
+>>> text_indentation("hello, world. The following are codes: hello. mike. nose.")
+hello, world.
+The following are codes:
+hello.
+mike.
+nose.
+
+# Test with non-string
+>>> text_indentation(8)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+# Test with "." and ":" and spaces
+>>> text_indentation("hello, world. The following          are codes: hello. mike. nose.")
+hello, world.
+The following          are codes:
+hello.
+mike.
+nose.
+
+# Test with ".", ":", "?"
+>>> text_indentation("hello, world. The following          are codes: hello. mike. nose. Do you know?")
+hello, world.
+The following          are codes:
+hello.
+mike.
+nose.
+Do you know?
+
+# Test with ".", ":", "?" with spaces
+>>> text_indentation("hello, world. The following          are codes: hello. mike. nose. Do you know? some things dont change.")
+hello, world.
+The following          are codes:
+hello.
+mike.
+nose.
+Do you know?
+some things dont change.
