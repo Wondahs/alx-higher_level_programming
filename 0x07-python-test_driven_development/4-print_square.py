@@ -4,12 +4,13 @@
 
 def print_square(size):
     """A function that prints squares.
-    
+
     Args:
         size (int): Size of square.
-        
+
     Raises:
-        TypeError: if size is not an integer, or if size is a float and int(size) is less than 0.
+        TypeError: if size is not an integer,
+                   or if size is a float and int(size) is less than 0.
         ValueError: if size is less than 0
     """
     if isinstance(size, float):
@@ -21,5 +22,5 @@ def print_square(size):
         raise ValueError("size must be >= 0")
 
     size = int(size)
-    for i in range(1, size + 1):
+    for _ in range(1, size + 1):
         print("#" * size)
