@@ -47,3 +47,18 @@ class Rectangle:
             return 0
         perimeter = 2 * (self.__width + self.__height)
         return perimeter
+
+    def __str__(self):
+        """Returns a printable rectangle"""
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        result = ""
+        for _ in range(self.__height):
+            result += "#" * self.__width + "\n"
+
+        return result.rstrip("\n")
+
+    def __repr__(self):
+        """Prints rectangle"""
+        for _ in range(self.__height):
+            print("#" * self.__width)
