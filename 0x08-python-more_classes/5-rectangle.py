@@ -63,3 +63,7 @@ class Rectangle:
         to be able to recreate a new instance by using eval()
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Prints message when an instance of Rectangle is deleted"""
+        print("Bye rectangle...")
