@@ -47,7 +47,7 @@ TypeError: div must be a number
 >>> print(matrix_divided(matrix_4, b))
 Traceback (most recent call last):
 ...
-TypeError: matrix must be a matrix (listof lists) of integers/floats
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> print(matrix_4)
 [2, 4, 6]
 
@@ -55,6 +55,6 @@ TypeError: matrix must be a matrix (listof lists) of integers/floats
 >>> print(matrix_divided(matrix_2, a))
 Traceback (most recent call last):
 ...
-TypeError: matrix must be a matrix (listof lists) of integers/floats
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> print(matrix_2)
 [[4, 'R', 2], [8, 1, 7], [5, 9, 0]]
