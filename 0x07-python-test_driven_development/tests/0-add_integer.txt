@@ -42,3 +42,15 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# Test with inf
+>>> add_integer(float("inf"), 4)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+# Test with NaN
+>>> add_integer(float("NaN"), 4)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
