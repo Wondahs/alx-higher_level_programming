@@ -102,3 +102,9 @@ TypeError: m_b should contain only integers or floats
 Traceback (most recent call last):
 ...
 TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+# Test with m_a as list of list with different sizes
+>>> matrix_mul([[2, 4, 6], [2, 4, 6, 5]], [[3, 5, 7]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
