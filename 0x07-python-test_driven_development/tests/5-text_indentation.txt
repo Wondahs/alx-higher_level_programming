@@ -5,29 +5,41 @@
 # Test with "."
 >>> text_indentation("hello. world.")
 hello.
+<BLANKLINE>
 world.
+<BLANKLINE>
 
 # Test with "." and spaces at beginning
 >>> text_indentation("    hello. world.")
 hello.
+<BLANKLINE>
 world.
+<BLANKLINE>
 
 # Test with "." and spaces after "."
 >>> text_indentation("    hello.     world.")
 hello.
+<BLANKLINE>
 world.
+<BLANKLINE>
 
 # Test with "."
 >>> text_indentation("hello, world.")
 hello, world.
+<BLANKLINE>
 
 # Test with "." and ":"
 >>> text_indentation("hello, world. The following are codes: hello. mike. nose.")
 hello, world.
+<BLANKLINE>
 The following are codes:
+<BLANKLINE>
 hello.
+<BLANKLINE>
 mike.
+<BLANKLINE>
 nose.
+<BLANKLINE>
 
 # Test with non-string
 >>> text_indentation(8)
@@ -38,26 +50,44 @@ TypeError: text must be a string
 # Test with "." and ":" and spaces
 >>> text_indentation("hello, world. The following          are codes: hello. mike. nose.")
 hello, world.
+<BLANKLINE>
 The following          are codes:
+<BLANKLINE>
 hello.
+<BLANKLINE>
 mike.
+<BLANKLINE>
 nose.
+<BLANKLINE>
 
 # Test with ".", ":", "?"
 >>> text_indentation("hello, world. The following          are codes: hello. mike. nose. Do you know?")
 hello, world.
+<BLANKLINE>
 The following          are codes:
+<BLANKLINE>
 hello.
+<BLANKLINE>
 mike.
+<BLANKLINE>
 nose.
+<BLANKLINE>
 Do you know?
+<BLANKLINE>
 
 # Test with ".", ":", "?" with spaces
 >>> text_indentation("hello, world. The following          are codes: hello. mike. nose. Do you know? some things dont change.")
 hello, world.
+<BLANKLINE>
 The following          are codes:
+<BLANKLINE>
 hello.
+<BLANKLINE>
 mike.
+<BLANKLINE>
 nose.
+<BLANKLINE>
 Do you know?
+<BLANKLINE>
 some things dont change.
+<BLANKLINE>
