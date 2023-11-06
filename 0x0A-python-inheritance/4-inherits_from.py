@@ -3,6 +3,7 @@
 Module that checks if specified object is a subclass of a specified class.
 """
 
+
 def inherits_from(obj, a_class):
     """
     Module that checks if specified object is a subclas  s of a specified class.
