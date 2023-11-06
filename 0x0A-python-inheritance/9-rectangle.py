@@ -9,9 +9,9 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Instantiates BaseGeometry object"""
 
-        self.integer_validator("height", height)
+        super().integer_validator("height", height)
         self.__height = height
-        self.integer_validator("width", width)
+        super().integer_validator("width", width)
         self.__width = width
 
     def area(self):
@@ -22,6 +22,6 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """Returns printable representation of Rectangle"""
 
-        string = "[" + str(self.__class__.__name__) + "] "
+        string = "[Rectangle] "
         string += str(self.__width) + "/" + str(self.__height)
         return string
