@@ -39,3 +39,5 @@ True
 False
 >>> issubclass(MyList, object)
 True
+>>> 'print_sorted' in dir(MyList)
+True
