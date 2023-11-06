@@ -25,13 +25,21 @@ True
 
 # Test with empty list
 >>> empty_list = MyList()
+>>> print(empty_list)
+[]
 >>> empty_list.print_sorted()
+[]
+>>> print(empty_list)
 []
 
 # Test with list of single element
 >>> single_list = MyList()
 >>> single_list.append(34)
+>>> print(single_list)
+[34]
 >>> single_list.print_sorted()
+[34]
+>>> print(single_list)
 [34]
 
 # Test list type
