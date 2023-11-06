@@ -8,9 +8,34 @@
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
+
+# Test with normal list
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
+
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+# Test with empty list
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+
+# Test with list of single element
+>>> single_list = MyList()
+>>> single_list.append(34)
+>>> single_list.print_sorted()
+[34]
+
+# Test list type
+>>> type(MyList())
+<class '1-my_list.MyList'>
+>>> isinstance(MyList, object)
+True
+>>> isinstance(MyList, list)
+False
+>>> issubclass(MyList, object)
+True
