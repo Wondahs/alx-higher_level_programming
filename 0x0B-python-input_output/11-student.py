@@ -24,3 +24,10 @@ class Student:
                 result[value] = atb
             return result
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """
+        Replaces all attributes of the Student instance.
+        """
+        for attr, value in json.items():
+            setattr(self, attr, value)
