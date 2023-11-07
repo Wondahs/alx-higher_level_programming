@@ -2,7 +2,6 @@
 """Module containing function that writes to file"""
 
 
-
 def write_file(filename="", text=""):
     """Function that writes to file.
     Args:
