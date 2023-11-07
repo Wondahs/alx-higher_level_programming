@@ -9,5 +9,4 @@ def write_file(filename="", text=""):
         text (str): Text to be written to file
     """
     with open(filename, 'w', encoding='utf-8') as file:
-        return(file.write(text))
-        #return bytes_written
+        return file.write(text)
