@@ -61,6 +61,7 @@ class Base:
         dummy.update(**dictionary)
         return dummy
 
+    @classmethod
     def load_from_file(cls):
         """
         Returns a list of instances.
@@ -70,8 +71,8 @@ class Base:
 
         try:
             with open(filename, 'r', encoding='utf-8') as file:
-                j_str = json.load(file)
-                dict_list = from_json_string(j_str)
+                j_str = file.read()
+                dict_list = cls.from_json_string(j_str)
                 for item in dict_list:
                     result.append(cls.create(**item))
                 return result
