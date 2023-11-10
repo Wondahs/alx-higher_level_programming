@@ -56,3 +56,12 @@ class Square(Rectangle):
         string = ""
         string += f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
         return string
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Square.
+        """
+        result = {}
+        result.update({'id': self.id, 'size': self.size,})
+        result.update({'x': self.x, 'y': self.y})
+        return result
