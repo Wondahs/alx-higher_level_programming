@@ -82,7 +82,7 @@ class Rectangle(Base):
         Returns [Rectangle] (<id>) <x>/<y> - <width>/<height>.
         """
         string = ""
-        string += f"[Rectangle] ({self.__id}) {self.__x}/{self.__y}"
+        string += f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
         string += f" - {self.__width}/{self.__height}"
         return string
 
@@ -120,3 +120,12 @@ class Rectangle(Base):
                     self.x = kwargs[key]
                 elif key == "y":
                     self.y = kwargs[key]
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+        """
+        result = {}
+        result.update({'id': self.id, 'width': self.__width,})
+        result.update({'height': self.__height, 'x': self.__x, 'y': self.__y})
+        return result
