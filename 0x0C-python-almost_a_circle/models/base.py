@@ -52,7 +52,7 @@ class Base:
         """
         Returns an instance with all attributes already set.
         """
-        if not dictionary or dictionary = {}:
+        if not dictionary or dictionary == {}:
             return
         if cls.__name__ == "Rectangle":
             dummy = cls(1,1)
