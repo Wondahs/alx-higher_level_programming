@@ -67,11 +67,12 @@ class Base:
         """
         Returns an instance from list.
         """
-        if cls.__name__ =="Rectangle":
+        if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         else:
             dummy = cls(1)
-        dummy.update(tuple(cls_as_list))
+        c_as_l = tuple(cls_as_list)
+        dummy.update(*c_as_l)
         return dummy
 
     @classmethod
@@ -92,6 +93,7 @@ class Base:
         except FileNotFoundError:
             return result
 
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """Serializes in CSV and writes to csv file"""
         result = []
@@ -103,13 +105,14 @@ class Base:
             header = ["id", "size", "x", "y"]
         result.append(header)
         for obj in list_objs:
-            result.append(obj.to_list)
+            result.append(obj.to_list())
         filename = f"{cls.__name__}.csv"
         with open(filename, 'w', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(result[0])
             writer.writerows(result[1:])
 
+    @classmethod
     def load_from_file_csv(cls):
         """Reads CSV and deserializes"""
         filename = f"{cls.__name__}.csv"
@@ -119,7 +122,8 @@ class Base:
                 reader = csv.reader(file)
                 next(reader)
                 for row in reader:
-                    result += cls.create_from_list(row)
+                    int_row = [int(element) for element in row]
+                    result.append(cls.create_from_list(int_row))
                 return result
         except IOError:
             return result

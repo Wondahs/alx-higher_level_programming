@@ -70,4 +70,4 @@ class Square(Rectangle):
         """
         Returns list representation of Square
         """
-        return [self.id, self.size, size.x, size.y]
+        return [self.id, self.size, self.x, self.y]
