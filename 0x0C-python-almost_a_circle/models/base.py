@@ -93,7 +93,7 @@ class Base:
             return result
 
     def save_to_file_csv(cls, list_objs):
-        """Serializes in CSV"""
+        """Serializes in CSV and writes to csv file"""
         result = []
         if list_objs in [[], None]:
             return result
@@ -105,4 +105,21 @@ class Base:
         for obj in list_objs:
             result.append(obj.to_list)
         filename = f"{cls.__name__}.csv"
+        with open(filename, 'w', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(result[0])
+            writer.writerows(result[1:])
 
+    def load_from_file_csv(cls):
+        """Reads CSV and deserializes"""
+        filename = f"{cls.__name__}.csv"
+        result = []
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                next(reader)
+                for row in reader:
+                    result += cls.create_from_list(row)
+                return result
+        except IOError:
+            return result
