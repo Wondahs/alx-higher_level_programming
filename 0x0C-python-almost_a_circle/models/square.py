@@ -65,3 +65,9 @@ class Square(Rectangle):
         result.update({'id': self.id, 'size': self.size,})
         result.update({'x': self.x, 'y': self.y})
         return result
+
+    def to_list(self):
+        """
+        Returns list representation of Square
+        """
+        return [self.id, self.size, size.x, size.y]

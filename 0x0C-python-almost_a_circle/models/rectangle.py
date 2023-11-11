@@ -129,3 +129,9 @@ class Rectangle(Base):
         result.update({'id': self.id, 'width': self.__width,})
         result.update({'height': self.__height, 'x': self.__x, 'y': self.__y})
         return result
+
+    def to_list(self):
+        """
+        Returns list representation of Rectangle.
+        """
+        return [self.id, self.width, self.height, self.x, self.y]

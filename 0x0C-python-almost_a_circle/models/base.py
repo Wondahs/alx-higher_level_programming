@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module containing base class"""
 import json
+import csv
 
 
 class Base:
@@ -62,6 +63,18 @@ class Base:
         return dummy
 
     @classmethod
+    def create_from_list(cls, cls_as_list):
+        """
+        Returns an instance from list.
+        """
+        if cls.__name__ =="Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
+        dummy.update(tuple(cls_as_list))
+        return dummy
+
+    @classmethod
     def load_from_file(cls):
         """
         Returns a list of instances.
@@ -78,3 +91,18 @@ class Base:
                 return result
         except FileNotFoundError:
             return result
+
+    def save_to_file_csv(cls, list_objs):
+        """Serializes in CSV"""
+        result = []
+        if list_objs in [[], None]:
+            return result
+        if cls.__name__ == "Rectangle":
+            header = ["id", "width", "height", "x", "y"]
+        elif cls.__name__ == "Square":
+            header = ["id", "size", "x", "y"]
+        result.append(header)
+        for obj in list_objs:
+            result.append(obj.to_list)
+        filename = f"{cls.__name__}.csv"
+
