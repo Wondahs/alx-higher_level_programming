@@ -1,4 +1,4 @@
-#!/usr/bin/python3.11
+#!/usr/bin/python3
 import turtle
 
 # Create a turtle screen and a turtle

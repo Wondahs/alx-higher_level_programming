@@ -36,7 +36,7 @@ class Base:
         with open(filename, 'w', encoding='utf-8') as file:
             if list_objs is None:
                 file.write("[]")
-            new_list = [obj.to_dictionary() for obj in list_objs ]
+            new_list = [obj.to_dictionary() for obj in list_objs]
             file.write(Base.to_json_string(new_list))
 
     @staticmethod
@@ -56,7 +56,7 @@ class Base:
         if not dictionary or dictionary == {}:
             return
         if cls.__name__ == "Rectangle":
-            dummy = cls(1,1)
+            dummy = cls(1, 1)
         else:
             dummy = cls(1)
         dummy.update(**dictionary)

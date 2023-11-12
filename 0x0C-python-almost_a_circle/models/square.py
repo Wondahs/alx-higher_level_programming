@@ -62,7 +62,7 @@ class Square(Rectangle):
         Returns the dictionary representation of a Square.
         """
         result = {}
-        result.update({'id': self.id, 'size': self.size,})
+        result.update({'id': self.id, 'size': self.size})
         result.update({'x': self.x, 'y': self.y})
         return result
 

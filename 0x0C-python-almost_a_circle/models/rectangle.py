@@ -126,7 +126,7 @@ class Rectangle(Base):
         Returns the dictionary representation of a Rectangle.
         """
         result = {}
-        result.update({'id': self.id, 'width': self.__width,})
+        result.update({'id': self.id, 'width': self.__width})
         result.update({'height': self.__height, 'x': self.__x, 'y': self.__y})
         return result
 
