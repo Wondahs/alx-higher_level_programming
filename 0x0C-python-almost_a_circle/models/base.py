@@ -37,8 +37,9 @@ class Base:
         with open(filename, 'w', encoding='utf-8') as file:
             if list_objs is None:
                 file.write("[]")
-            new_list = [obj.to_dictionary() for obj in list_objs]
-            file.write(Base.to_json_string(new_list))
+            else:
+                new_list = [obj.to_dictionary() for obj in list_objs]
+                file.write(Base.to_json_string(new_list))
 
     @staticmethod
     def from_json_string(json_string):
@@ -98,18 +99,20 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Serializes in CSV and writes to csv file"""
         result = []
-        if list_objs in [[], None]:
-            return result
-        if cls.__name__ == "Rectangle":
-            header = ["id", "width", "height", "x", "y"]
-        elif cls.__name__ == "Square":
-            header = ["id", "size", "x", "y"]
-        result.append(header)
-        for obj in list_objs:
-            result.append(obj.to_list())
+        header = []
         filename = f"{cls.__name__}.csv"
         with open(filename, 'w', encoding='utf-8') as file:
+            if list_objs in [[], None]:
+                file.write("[]")
+                return
             writer = csv.writer(file)
+            if cls.__name__ == "Rectangle":
+                header = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                header = ["id", "size", "x", "y"]
+            result.append(header)
+            for obj in list_objs:
+                result.append(obj.to_list())
             writer.writerow(result[0])
             writer.writerows(result[1:])
 
