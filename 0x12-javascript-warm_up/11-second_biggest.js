@@ -13,7 +13,7 @@ if (args.length < 4) {
     }
   }
   first = largest;
-  largest = parseInt(args[2]);
+  largest = Number.NEGATIVE_INFINITY;
   for (let i = 2; i < args.length; i++) {
     if (parseInt(args[i]) === first) {
       continue;
