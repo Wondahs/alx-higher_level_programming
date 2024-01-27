@@ -6,7 +6,7 @@ if __name__ == '__main__':
     import requests
     from sys import argv
     url = 'http://0.0.0.0:5000/search_user'
-    data = {'q': argv[1] if argv[1] else ''}
+    data = {'q': argv[1] if len(argv) > 0 else ''}
     content = requests.post(url, data=data)
     try:
         json_data = content.json()
