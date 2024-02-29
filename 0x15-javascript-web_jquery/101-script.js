@@ -7,21 +7,20 @@ When the user clicks on DIV#remove_item: the last element is removed from the li
 When the user clicks on DIV#clear_list: all elements of the list are removed
 */
 $(document).ready(() => {
-	// Add a click event listener for DIV#add_item
-	$('DIV#add_item').click(() => {
-		// Add new LI element
-		let liElement = $('<li>').text('Item');
-		$('UL.my_list').append(liElement);
-	});
-	// Add a click event listener for DIV#remove_item
-	$('DIV#remove_item').click(() => {
-		// remove last li element
-		$('UL.my_list li:last-child').remove();
-	});
-	// Add a click event listener for DIV#clear_list
-	$('DIV#clear_list').click(() => {
-		// Remove all LI elements
-		$('UL.my_list').empty();
-	});
-
+  // Add a click event listener for DIV#add_item
+  $('DIV#add_item').click(() => {
+    // Add new LI element
+    const liElement = $('<li>').text('Item');
+    $('UL.my_list').append(liElement);
+  });
+  // Add a click event listener for DIV#remove_item
+  $('DIV#remove_item').click(() => {
+    // remove last li element
+    $('UL.my_list li:last-child').remove();
+  });
+  // Add a click event listener for DIV#clear_list
+  $('DIV#clear_list').click(() => {
+    // Remove all LI elements
+    $('UL.my_list').empty();
+  });
 });
